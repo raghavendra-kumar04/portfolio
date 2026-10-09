@@ -1,260 +1,804 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raghavendra Kumar Budati — Portfolio</title>
+  <title>Raghavendra Kumar Budati — Software Developer & AI/ML Enthusiast</title>
+  <meta name="description" content="Portfolio of Raghavendra Kumar Budati - Full-Stack Developer, AI & ML Engineer specializing in modern web applications, intelligent systems, and automation." />
+  <meta name="keywords" content="Raghavendra Kumar Budati, Portfolio, Full-Stack Developer, Machine Learning, AI, Python, React, Next.js, CampusLoop, Email Automation, Media2Markdown" />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Raghavendra Kumar Budati — Portfolio" />
+  <meta property="og:description" content="Building futuristic, fast & interactive web experiences with AI/ML and modern full-stack technologies." />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css"/>
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Background layers -->
-  <div class="bg-gradient"></div>
-  <div class="bg-noise"></div>
+  <!-- Interactive Ambient Canvas Background -->
+  <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+  
+  <!-- Ambient Gradient Glow Orbs -->
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-noise" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a class="brand" href="#home">
-      
-      <span class="brand-text">Raghavendra&nbsp;Kumar&nbsp;Budati</span>
-    </a>
+  <!-- Custom Cursor Glow (Desktop) -->
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
 
-    <nav class="nav" id="nav">
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-        <i class="bx bx-menu"></i>
-      </button>
-      <ul class="nav-list" id="navList">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#certifications" class="nav-link">Certifications</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li class="theme-wrap"><button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class='bx bx-moon'></i></button></li>
-      </ul>
-    </nav>
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a class="brand" href="#home" aria-label="Raghavendra Kumar - Home">
+        <div class="brand-logo">
+          <span class="logo-symbol">&lt;R/&gt;</span>
+        </div>
+        <div class="brand-info">
+          <span class="brand-name">Raghavendra Kumar</span>
+          <span class="brand-role">AI & Full-Stack</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main Navigation">
+        <ul class="nav-list" id="navList">
+          <li><a href="#home" class="nav-link active"><i class='bx bx-home-alt'></i><span>Home</span></a></li>
+          <li><a href="#about" class="nav-link"><i class='bx bx-user'></i><span>About</span></a></li>
+          <li><a href="#skills" class="nav-link"><i class='bx bx-code-alt'></i><span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-link"><i class='bx bx-folder'></i><span>Projects</span></a></li>
+          <li><a href="#certifications" class="nav-link"><i class='bx bx-certification'></i><span>Certifications</span></a></li>
+          <li><a href="#contact" class="nav-link"><i class='bx bx-envelope'></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle visual theme" title="Toggle Theme (Key: T)">
+          <i class='bx bx-moon'></i>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <i class='bx bx-menu'></i>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section id="home" class="section hero">
       <div class="hero-inner container">
         <div class="hero-text">
-          <p class="eyebrow">CSE (AI & ML) • Developer • Problem Solver</p>
-          <h1 class="headline">
-            Building <span class="grad">futuristic, fast</span> & <span class="grad">interactive</span> web experiences
-          </h1>
-          <p class="subhead">
-            I craft responsive websites and apps with clean code, smooth animations, and a strong focus on performance & accessibility.
-          </p>
-          <div class="cta-row">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn ghost">Hire Me</a>
+          <div class="status-pill reveal">
+            <span class="status-dot"></span>
+            <span>Open for Opportunities & Collaborations</span>
           </div>
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/budati-raghavendra-kumar-488306344" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://github.com/raghavendra-kumar04" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/raghavendra_kumar0704?igsh=bnRpazZ1eG9vaWU0" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.facebook.com/raghava.budati" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+
+          <h1 class="headline reveal delay-1">
+            Hi, I'm <span class="grad-text">Raghavendra</span><br/>
+            I build <span class="typing-text" id="typingText"></span><span class="cursor-blink">|</span>
+          </h1>
+
+          <p class="subhead reveal delay-2">
+            Third-year CSE (AI & ML) student crafting responsive, high-performance web applications, intelligent machine learning systems, and robust automation pipelines.
+          </p>
+
+          <div class="cta-row reveal delay-3">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <i class='bx bx-right-arrow-alt'></i>
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <span>Get in Touch</span>
+              <i class='bx bx-send'></i>
+            </a>
+            <button class="btn btn-icon-only copy-email-btn" id="heroCopyEmail" title="Copy email address" aria-label="Copy Email">
+              <i class='bx bx-copy'></i>
+            </button>
+          </div>
+
+          <div class="social-row reveal delay-4">
+            <span class="social-label">Connect:</span>
+            <div class="social-links">
+              <a href="https://github.com/raghavendra-kumar04" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <i class='bx bxl-github'></i>
+              </a>
+              <a href="https://www.linkedin.com/in/budati-raghavendra-kumar-488306344" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <i class='bx bxl-linkedin'></i>
+              </a>
+              <a href="mailto:raghavendrakumarbudati@gmail.com" class="social-btn" aria-label="Email">
+                <i class='bx bx-envelope'></i>
+              </a>
+              <a href="https://www.instagram.com/raghavendra_kumar0704?igsh=bnRpazZ1eG9vaWU0" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                <i class='bx bxl-instagram'></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="hero-media">
-          <div class="card glass profile-card reveal">
-            <img src="raghavendra.png" alt="Raghavendra Kumar Budati" class="avatar"/>
-            <div class="tag-row">
-              <span class="chip">Frontend</span>
-              <span class="chip">AI/ML</span>
-              <span class="chip">DSA</span>
+
+        <div class="hero-media reveal delay-2">
+          <div class="profile-card-wrapper" id="profileCardWrapper">
+            <div class="profile-card glass tilt-card">
+              <div class="avatar-container">
+                <img src="raghavendra.png" alt="Raghavendra Kumar Budati" class="avatar-img" />
+                <div class="avatar-glow"></div>
+                <div class="badge-float badge-left">
+                  <i class='bx bx-brain'></i>
+                  <span>AI & ML</span>
+                </div>
+                <div class="badge-float badge-right">
+                  <i class='bx bx-layer'></i>
+                  <span>Full-Stack</span>
+                </div>
+              </div>
+
+              <div class="profile-info">
+                <h3 class="profile-name">Raghavendra Kumar B.</h3>
+                <p class="profile-tagline">B.Tech CSE (AI & ML) • 2026</p>
+                <div class="profile-chips">
+                  <span class="chip"><i class='bx bxl-python'></i> Python</span>
+                  <span class="chip"><i class='bx bxl-react'></i> React / Web</span>
+                  <span class="chip"><i class='bx bxs-data'></i> ML & DSA</span>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counter Strip -->
+      <div class="container hero-stats-container reveal delay-4">
+        <div class="stats-strip glass">
+          <div class="stat-item">
+            <div class="stat-value"><span class="counter" data-target="5">0</span><span class="stat-plus">+</span></div>
+            <div class="stat-label">Projects Engineered</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="counter" data-target="99">0</span><span class="stat-plus">%</span></div>
+            <div class="stat-label">Model Accuracy Rate</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="counter" data-target="3">0</span><span class="stat-plus">+</span></div>
+            <div class="stat-label">Key Certifications</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="counter" data-target="300">0</span><span class="stat-plus">+</span></div>
+            <div class="stat-label">DSA Problems Solved</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="section">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="lead">
-          I'm <span class="accent">Budati Raghavendra Kumar</span>, a third‑year CSE student specializing in
-          <strong>Artificial Intelligence & Machine Learning</strong>. I love solving problems and turning ideas into
-          interactive products. My goal is to contribute to innovative solutions while constantly sharpening my skills.
-        </p>
+        <div class="section-header reveal">
+          <span class="section-badge"><i class='bx bx-user-pin'></i> Background</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A blend of analytical problem solving and creative full-stack development</p>
+        </div>
 
         <div class="about-grid">
-          <div class="about-card glass reveal">
-            <i class='bx bx-code-block card-icon'></i>
-            <h3>What I Do</h3>
-            <p>Modern, responsive UIs; performance‑first web apps; clean and maintainable code; thoughtful micro‑interactions.</p>
-          </div>
-          <div class="about-card glass reveal delay-1">
-            <i class='bx bx-bulb card-icon'></i>
-            <h3>What I Value</h3>
-            <p>Clarity, accessibility, and delightful UX. I believe small details make a big difference.</p>
-          </div>
-          <div class="about-card glass reveal delay-2">
-            <i class='bx bx-rocket card-icon'></i>
-            <h3>Currently</h3>
-            <p>Learning advanced JS patterns & AI tooling. Building side projects and contributing to hackathons.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section alt">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-wrap reveal">
-          <div class="skill-group">
-            <h4>Programming</h4>
-            <div class="chips">
-              <span class="chip">Java</span>
-              <span class="chip">Python</span>
-              <span class="chip">JavaScript</span>
+          <div class="about-narrative glass reveal">
+            <div class="about-tag">
+              <i class='bx bx-terminal'></i>
+              <span>Engineering Philosophy</span>
             </div>
-          </div>
-          <div class="skill-group">
-            <h4>Core</h4>
-            <div class="chips">
-              <span class="chip">DSA</span>
-              <span class="chip">Web Dev</span>
-              <span class="chip">Competitive Programming</span>
-              <span class="chip">Machine Learning</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h4>Soft Skills</h4>
-            <div class="chips">
-              <span class="chip">Communication</span>
-              <span class="chip">Problem‑solving</span>
-              <span class="chip">Adaptability</span>
-              <span class="chip">Teamwork</span>
-              <span class="chip">Logical Thinking</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-      <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <ol class="timeline reveal">
-          <li class="timeline-item">
-            <span class="dot"></span>
-            <div class="tl-card glass">
-              <h3>Programming in Java</h3>
-              <p>NPTEL — Completed</p>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="dot"></span>
-            <div class="tl-card glass">
-              <h3>Programming using Java</h3>
-              <p>Infosys Springboard — Completed</p>
-            </div>
-          </li>
-          <li class="timeline-item">
-            <span class="dot"></span>
-            <div class="tl-card glass">
-              <h3>CodeChef — 500 Difficulty</h3>
-              <p>Certificate of Completion</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section alt">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-
-        <div class="projects-grid">
-          <article class="project-card card reveal">
-            <div class="project-head">
-              <h3>Prediction of CO2 Emission</h3>
-              <span class="badge">Internship</span>
-            </div>
-            <p>
-              Implemented a ML model that predicts on the carbon emission based on the country specific data. The model generalizes well to unseen data. It achieved a high average R2 score of 0.98 across the cross-validated training 
-              set and each fold.
+            <p class="lead-text">
+              I am a pre-final year <strong>Computer Science & Engineering (AI & ML)</strong> undergraduate passionate about transforming intricate real-world problems into elegant, scalable software solutions.
             </p>
-            <ul class="project-tags">
-              <li>Python</li><li>Jupyter Notebook</li>
-            </ul>
-            <div class="project-cta">
-              <a class="btn small primary" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn small ghost" href="https://github.com/raghavendra-kumar04/carbon_emission_prediction.git" target="_blank" rel="noreferrer">Code</a>
+            <p class="body-text">
+              My journey spans across developing dynamic web platforms, training predictive machine learning models, and building automation workflows that eliminate repetitive tasks. I place a strong emphasis on writing clean, maintainable code, optimizing performance, and delivering intuitive user experiences.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class='bx bx-check-shield highlight-icon'></i>
+                <div>
+                  <strong>Scalable Architecture</strong>
+                  <span>Building modular backends, robust APIs, and responsive frontends</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class='bx bx-data highlight-icon'></i>
+                <div>
+                  <strong>Data & Intelligence</strong>
+                  <span>Applying predictive analytics, feature engineering & NLP algorithms</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class='bx bx-bolt-circle highlight-icon'></i>
+                <div>
+                  <strong>Automation Driven</strong>
+                  <span>Streamlining workflows via asynchronous queues and scheduled scripts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards-col">
+            <div class="feature-card glass tilt-card reveal delay-1">
+              <div class="card-icon-wrap grad-1">
+                <i class='bx bx-code-alt'></i>
+              </div>
+              <h3>Full-Stack Engineering</h3>
+              <p>Designing modern reactive user interfaces with responsive architecture and structured RESTful & asynchronous backends.</p>
+            </div>
+
+            <div class="feature-card glass tilt-card reveal delay-2">
+              <div class="card-icon-wrap grad-2">
+                <i class='bx bx-chip'></i>
+              </div>
+              <h3>AI & Machine Learning</h3>
+              <p>Developing predictive regression and classification pipelines with high cross-validated accuracy and real-world utility.</p>
+            </div>
+
+            <div class="feature-card glass tilt-card reveal delay-3">
+              <div class="card-icon-wrap grad-3">
+                <i class='bx bx-cog'></i>
+              </div>
+              <h3>Workflow Automation</h3>
+              <p>Automating content transformation pipelines, mass email dispatch systems, and data processing workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section alt-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class='bx bx-wrench'></i> Technical Arsenal</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">Core proficiencies, frameworks, and engineering tools I work with</p>
+        </div>
+
+        <!-- Skill Category Tabs -->
+        <div class="skills-filter-nav reveal">
+          <button class="skill-tab-btn active" data-skill-tab="all">All Skills</button>
+          <button class="skill-tab-btn" data-skill-tab="languages">Languages</button>
+          <button class="skill-tab-btn" data-skill-tab="frontend">Web & Frontend</button>
+          <button class="skill-tab-btn" data-skill-tab="backend">Backend & DB</button>
+          <button class="skill-tab-btn" data-skill-tab="aiml">AI / ML & Core</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Programming Languages -->
+          <div class="skill-box glass tilt-card reveal" data-skill-cat="languages">
+            <div class="skill-header">
+              <div class="skill-icon-group">
+                <i class='bx bxl-python skill-logo python-c'></i>
+                <i class='bx bxl-java skill-logo java-c'></i>
+                <i class='bx bxl-javascript skill-logo js-c'></i>
+              </div>
+              <h4>Programming Languages</h4>
+            </div>
+            <p class="skill-desc">Object-oriented programming, data structures, and script development.</p>
+            <div class="skill-tags">
+              <span class="tech-pill"><i class='bx bxl-python'></i> Python</span>
+              <span class="tech-pill"><i class='bx bxl-java'></i> Java</span>
+              <span class="tech-pill"><i class='bx bxl-javascript'></i> JavaScript (ES6+)</span>
+              <span class="tech-pill"><i class='bx bxl-c-plus-plus'></i> C / C++</span>
+            </div>
+          </div>
+
+          <!-- Web & Frontend -->
+          <div class="skill-box glass tilt-card reveal delay-1" data-skill-cat="frontend">
+            <div class="skill-header">
+              <div class="skill-icon-group">
+                <i class='bx bxl-react skill-logo react-c'></i>
+                <i class='bx bxl-html5 skill-logo html-c'></i>
+                <i class='bx bxl-tailwind-css skill-logo tailwind-c'></i>
+              </div>
+              <h4>Frontend Development</h4>
+            </div>
+            <p class="skill-desc">Crafting responsive, accessible, interactive, and aesthetic UI/UX.</p>
+            <div class="skill-tags">
+              <span class="tech-pill"><i class='bx bxl-react'></i> React.js</span>
+              <span class="tech-pill"><i class='bx bxl-html5'></i> HTML5 & CSS3</span>
+              <span class="tech-pill"><i class='bx bxl-tailwind-css'></i> Tailwind CSS</span>
+              <span class="tech-pill"><i class='bx bx-devices'></i> Responsive Design</span>
+              <span class="tech-pill"><i class='bx bx-palette'></i> Glassmorphism / UI</span>
+            </div>
+          </div>
+
+          <!-- Backend & Database -->
+          <div class="skill-box glass tilt-card reveal delay-2" data-skill-cat="backend">
+            <div class="skill-header">
+              <div class="skill-icon-group">
+                <i class='bx bxl-nodejs skill-logo node-c'></i>
+                <i class='bx bxl-mongodb skill-logo mongo-c'></i>
+                <i class='bx bxl-postgresql skill-logo sql-c'></i>
+              </div>
+              <h4>Backend & Databases</h4>
+            </div>
+            <p class="skill-desc">Asynchronous APIs, background workers, and persistent data storage.</p>
+            <div class="skill-tags">
+              <span class="tech-pill"><i class='bx bxl-nodejs'></i> Node.js & Express</span>
+              <span class="tech-pill"><i class='bx bx-server'></i> FastAPI (Python)</span>
+              <span class="tech-pill"><i class='bx bxl-mongodb'></i> MongoDB</span>
+              <span class="tech-pill"><i class='bx bx-data'></i> SQL / Relational DB</span>
+              <span class="tech-pill"><i class='bx bx-mail-send'></i> SMTP & Automation</span>
+            </div>
+          </div>
+
+          <!-- AI / ML & Data Science -->
+          <div class="skill-box glass tilt-card reveal delay-3" data-skill-cat="aiml">
+            <div class="skill-header">
+              <div class="skill-icon-group">
+                <i class='bx bx-brain skill-logo ai-c'></i>
+                <i class='bx bx-line-chart skill-logo ds-c'></i>
+              </div>
+              <h4>AI / ML & Core CS</h4>
+            </div>
+            <p class="skill-desc">Supervised learning, predictive modeling, and algorithm optimization.</p>
+            <div class="skill-tags">
+              <span class="tech-pill"><i class='bx bx-brain'></i> Machine Learning</span>
+              <span class="tech-pill"><i class='bx bx-line-chart'></i> Scikit-Learn & Pandas</span>
+              <span class="tech-pill"><i class='bx bx-text'></i> NLP (Text Classification)</span>
+              <span class="tech-pill"><i class='bx bx-code-curly'></i> Data Structures & Algorithms</span>
+              <span class="tech-pill"><i class='bx bxl-git'></i> Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class='bx bx-grid-alt'></i> Portfolio Showcase</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Real-world systems, machine learning models, and automation tools</p>
+        </div>
+
+        <!-- Project Filter Controls -->
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Web & Full-Stack</button>
+          <button class="filter-btn" data-filter="aiml">AI / Machine Learning</button>
+          <button class="filter-btn" data-filter="automation">Automation & Tools</button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: CampusLoop -->
+          <article class="project-card glass tilt-card reveal" data-category="web" data-project-id="campusloop">
+            <div class="project-card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class='bx bx-network-chart'></i>
+              </div>
+              <div class="badge-status in-progress">
+                <span class="pulse-dot"></span>
+                <span>Active Project</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">CampusLoop</h3>
+              <p class="project-summary">
+                A unified campus collaboration & student networking platform enabling seamless peer interaction, event discovery, academic resource sharing, and community engagement.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tag">React / Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-details" data-project="campusloop">
+                <span>View Details</span>
+                <i class='bx bx-info-circle'></i>
+              </button>
+              <a href="https://github.com/raghavendra-kumar04" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-icon-link" aria-label="GitHub Repository">
+                <i class='bx bxl-github'></i>
+              </a>
             </div>
           </article>
 
-          <!-- Add more project cards as you build them -->
-          <article class="project-card card reveal delay-1">
-            <div class="project-head">
-              <h3>Fake News Detector</h3>
-              <span class="badge">ML</span>
+          <!-- Project 2: Email Automation System -->
+          <article class="project-card glass tilt-card reveal delay-1" data-category="automation" data-project-id="emailautomation">
+            <div class="project-card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class='bx bx-mail-send'></i>
+              </div>
+              <div class="badge-status completed">
+                <i class='bx bx-check-circle'></i>
+                <span>Completed</span>
+              </div>
             </div>
-            <p>
-               Implemented a Random Forest–based Machine Learning model in Python that attained a 99% accuracy rate in predicting the authenticity of news article.
-            </p>
-            <ul class="project-tags">
-              <li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-            </ul>
-            <div class="project-cta">
-              <a class="btn small primary" href="#" target="_blank" rel="noreferrer">Live</a>
-              <a class="btn small ghost" href="https://github.com/raghavendra-kumar04/fake_news_detector.git" target="_blank" rel="noreferrer">Code</a>
+
+            <div class="project-body">
+              <h3 class="project-title">Email Automation System</h3>
+              <p class="project-summary">
+                High-efficiency automated email scheduling and dispatching pipeline supporting customizable HTML templates, bulk campaign delivery, and recipient tracking.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tag">Node.js / Python</span>
+                <span class="tag">Nodemailer / SMTP</span>
+                <span class="tag">Template Engine</span>
+                <span class="tag">Cron Scheduling</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-details" data-project="emailautomation">
+                <span>View Details</span>
+                <i class='bx bx-info-circle'></i>
+              </button>
+              <a href="https://github.com/raghavendra-kumar04" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-icon-link" aria-label="GitHub Repository">
+                <i class='bx bxl-github'></i>
+              </a>
             </div>
           </article>
+
+          <!-- Project 3: Media2Markdown Engine -->
+          <article class="project-card glass tilt-card reveal delay-2" data-category="automation" data-project-id="media2markdown">
+            <div class="project-card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class='bx bx-file-blank'></i>
+              </div>
+              <div class="badge-status in-progress">
+                <span class="pulse-dot"></span>
+                <span>Active Engine</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Media2Markdown Engine</h3>
+              <p class="project-summary">
+                Fast multimedia transformation backend engine built with FastAPI and asynchronous workers, parsing media and document formats into clean, structured Markdown.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tag">FastAPI</span>
+                <span class="tag">Python</span>
+                <span class="tag">Uvicorn</span>
+                <span class="tag">Async Tasks</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-details" data-project="media2markdown">
+                <span>View Details</span>
+                <i class='bx bx-info-circle'></i>
+              </button>
+              <a href="https://github.com/raghavendra-kumar04" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-icon-link" aria-label="GitHub Repository">
+                <i class='bx bxl-github'></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Prediction of CO2 Emission -->
+          <article class="project-card glass tilt-card reveal delay-1" data-category="aiml" data-project-id="co2emission">
+            <div class="project-card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class='bx bx-line-chart-down'></i>
+              </div>
+              <div class="badge-status internship">
+                <i class='bx bx-award'></i>
+                <span>Internship (R² 0.98)</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Prediction of CO₂ Emission</h3>
+              <p class="project-summary">
+                Predictive regression machine learning model forecasting carbon emission trends from country-specific datasets, achieving a 0.98 R² cross-validation benchmark.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Scikit-Learn</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Jupyter</span>
+                <span class="tag">Regression</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-details" data-project="co2emission">
+                <span>View Details</span>
+                <i class='bx bx-info-circle'></i>
+              </button>
+              <a href="https://github.com/raghavendra-kumar04/carbon_emission_prediction.git" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-icon-link" aria-label="GitHub Repository">
+                <i class='bx bxl-github'></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: Fake News Detector -->
+          <article class="project-card glass tilt-card reveal delay-2" data-category="aiml" data-project-id="fakenews">
+            <div class="project-card-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class='bx bx-shield-quarter'></i>
+              </div>
+              <div class="badge-status completed">
+                <i class='bx bx-check-circle'></i>
+                <span>99% Accuracy</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Fake News Detector</h3>
+              <p class="project-summary">
+                NLP-powered Machine Learning classification system using Random Forest algorithm to evaluate and predict the authenticity of news articles in real-time.
+              </p>
+              
+              <div class="project-tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Random Forest</span>
+                <span class="tag">NLP</span>
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Flask</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-details" data-project="fakenews">
+                <span>View Details</span>
+                <i class='bx bx-info-circle'></i>
+              </button>
+              <a href="https://github.com/raghavendra-kumar04/fake_news_detector.git" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-icon-link" aria-label="GitHub Repository">
+                <i class='bx bxl-github'></i>
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CERTIFICATIONS & TIMELINE SECTION -->
+    <section id="certifications" class="section alt-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class='bx bx-certification'></i> Milestones</span>
+          <h2 class="section-title">Certifications & Achievements</h2>
+          <p class="section-subtitle">Academic verifications, certified competencies, and milestones</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-track"></div>
+
+          <!-- Timeline 1: NPTEL Java -->
+          <div class="timeline-node glass tilt-card reveal">
+            <div class="timeline-marker">
+              <i class='bx bxs-graduation'></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="issuer">NPTEL</span>
+                <span class="tag-status verified"><i class='bx bx-check'></i> Verified Certificate</span>
+              </div>
+              <h3 class="timeline-title">Programming in Java</h3>
+              <p class="timeline-desc">
+                Comprehensive certification covering OOP concepts, multithreading, exception handling, collections framework, and JVM memory architecture.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline 2: Infosys Springboard -->
+          <div class="timeline-node glass tilt-card reveal delay-1">
+            <div class="timeline-marker">
+              <i class='bx bx-code-block'></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="issuer">Infosys Springboard</span>
+                <span class="tag-status verified"><i class='bx bx-check'></i> Certified</span>
+              </div>
+              <h3 class="timeline-title">Programming using Java</h3>
+              <p class="timeline-desc">
+                Hands-on enterprise Java programming curriculum emphasizing algorithmic problem solving, structured logic, and clean code practices.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline 3: CodeChef -->
+          <div class="timeline-node glass tilt-card reveal delay-2">
+            <div class="timeline-marker">
+              <i class='bx bx-trophy'></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="issuer">CodeChef</span>
+                <span class="tag-status solved"><i class='bx bx-star'></i> 500 Difficulty</span>
+              </div>
+              <h3 class="timeline-title">Competitive Problem Solving (500 Difficulty)</h3>
+              <p class="timeline-desc">
+                Demonstrated algorithmic agility, data structures implementation, and computational complexity optimization under timed conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <form id="contactForm" class="form card glass reveal" novalidate>
-          <div class="form-row">
-            <div class="input">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required/>
-              <small class="error"></small>
+        <div class="section-header reveal">
+          <span class="section-badge"><i class='bx bx-paper-plane'></i> Get In Touch</span>
+          <h2 class="section-title">Let's Connect & Collaborate</h2>
+          <p class="section-subtitle">Whether you have an opportunity, a project idea, or just want to talk tech — my inbox is always open!</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Contact Info Column -->
+          <div class="contact-info-card glass reveal">
+            <div class="contact-info-header">
+              <div class="info-icon-badge">
+                <i class='bx bx-chat'></i>
+              </div>
+              <h3>Reach Out Directly</h3>
+              <p>Feel free to connect through email or any of my social profiles.</p>
             </div>
-            <div class="input">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required/>
-              <small class="error"></small>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="method-icon"><i class='bx bx-envelope'></i></div>
+                <div class="method-text">
+                  <span class="method-title">Email</span>
+                  <a href="mailto:raghavendrakumarbudati@gmail.com" class="method-val">raghavendrakumarbudati@gmail.com</a>
+                </div>
+                <button class="copy-small-btn" data-copy="raghavendrakumarbudati@gmail.com" title="Copy email">
+                  <i class='bx bx-copy'></i>
+                </button>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class='bx bxl-linkedin'></i></div>
+                <div class="method-text">
+                  <span class="method-title">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/budati-raghavendra-kumar-488306344" target="_blank" rel="noopener noreferrer" class="method-val">budati-raghavendra-kumar</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon"><i class='bx bxl-github'></i></div>
+                <div class="method-text">
+                  <span class="method-title">GitHub</span>
+                  <a href="https://github.com/raghavendra-kumar04" target="_blank" rel="noopener noreferrer" class="method-val">raghavendra-kumar04</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="availability-badge">
+              <div class="pulse-indicator"></div>
+              <span>Currently available for internships & freelance roles</span>
             </div>
           </div>
 
-          <div class="input">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            <small class="error"></small>
-          </div>
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card glass reveal delay-1">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Your Name</label>
+                  <div class="input-wrapper">
+                    <i class='bx bx-user input-icon'></i>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required />
+                  </div>
+                  <span class="error-msg" id="nameError"></span>
+                </div>
 
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Send Message</button>
-            <p class="form-note">I usually respond within 24 hours.</p>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <div class="input-wrapper">
+                    <i class='bx bx-at input-icon'></i>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required />
+                  </div>
+                  <span class="error-msg" id="emailError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <div class="input-wrapper">
+                  <i class='bx bx-bookmark input-icon'></i>
+                  <input type="text" id="subject" name="subject" class="form-input" placeholder="Project collaboration / Internship inquiry" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class='bx bx-comment-detail input-icon'></i>
+                  <textarea id="message" name="message" class="form-input form-textarea" rows="4" placeholder="Hi Raghavendra, let's discuss..." required></textarea>
+                </div>
+                <span class="error-msg" id="messageError"></span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                  <span>Send Message</span>
+                  <i class='bx bx-paper-plane'></i>
+                </button>
+                <span class="form-privacy-note"><i class='bx bx-lock-alt'></i> Replies usually within 24h</span>
+              </div>
+            </form>
+
+            <div class="form-success-overlay" id="formSuccessOverlay">
+              <div class="success-icon-wrap">
+                <i class='bx bx-check'></i>
+              </div>
+              <h3>Message Sent Successfully!</h3>
+              <p>Thanks for reaching out! I've received your note and will get back to you shortly.</p>
+              <button class="btn btn-glass" id="resetFormBtn">Send Another</button>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Project Details Interactive Modal -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true" role="dialog">
+    <div class="modal-container glass">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <i class='bx bx-x'></i>
+      </button>
+      
+      <div class="modal-body" id="modalContent">
+        <!-- Content injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> <strong>Raghavendra Kumar Budati</strong>. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#home">Top</a>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;R/&gt;</span>
+        <div>
+          <p class="footer-name">Raghavendra Kumar Budati</p>
+          <p class="footer-sub">CSE (AI & ML) • Software Developer</p>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© <span id="year"></span> Raghavendra Kumar Budati. Built with passion, precision & modern web magic.</p>
       </div>
     </div>
   </footer>
